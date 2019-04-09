@@ -1,0 +1,21 @@
+out/
+build/
+bin/
+classes/
+target/
+session_data/
+*.jar
+*.war
+*.class
+
+#ide-eclipse
+.project
+.settings
+.classpath
+.idea/
+*.iml
+*.eml
+*.log
+
+#mac os
+.DS_Store

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Log - Discovery</title>
+</head>
+
+<body>
+<div class="container-fluid" id="app" style="background-color: #F5F7FA">
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+        <div class="navbar-nav-scroll" style="margin-top: 0.8%">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item" style="list-style-type: none">
+                    <a class="nav-link" style="font-size: 22px;">日志监控系统 v2.0</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="row flex-xl-nowrap">
+        <!--<div class="col-12 col-md-2 col-xl-3">
+            <nav class="collapse bd-links" id="bd-docs-nav">
+                <div class="list-group col-sm-12">
+                    <div class="col-sm-10">
+                        <span class="bd-toc-link" style="font-size: 18px;margin-left: 13px">添加项目</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-sm btn-success" id="addServiceBtn" onclick="addService(this)">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="list-group" style="margin-top: 10px" id="serviceList">
+                </div>
+            </nav>
+        </div>-->
+
+        <main class="col-12 col-md-12 col-xl-8 py-md-3 pl-md-5 bd-content" role="main" style="margin-top: 1rem">
+            <div>
+                <div id="toolbar" class="btn-group" style="margin-right: 10px">
+                    <ul style="list-style-type: none;">
+                        <li style="float: left;margin-left: 20px">字体大小: &nbsp;</li>
+                        <li style="float: left;">
+                            <select id="fontSelect" onchange="fontSizeChange(this)"
+                                    class="form-control input-outline">
+                                <option value="c12" selected>12</option>
+                                <option value="c13">13</option>
+                                <option value="c14">14</option>
+                                <option value="c15">15</option>
+                            </select>
+                        </li>
+
+                        <li style="float: left;margin-left: 20px">环境: &nbsp;</li>
+                        <li style="float: left;">
+                            <select id="envSelect" onchange="valChange(this,'env')" type="text"
+                                    class="form-control input-outline">
+                                <option value="" selected>所有</option>
+                                <option value="dev">dev</option>
+                                <option value="test">test</option>
+                                <option value="prd">prd</option>
+                            </select>
+                        </li>
+
+                        <li style="float: left;margin-left: 20px">服务: &nbsp;</li>
+                        <li style="float: left;">
+                            <select id="serviceSelect" onchange="valChange(this,'service')" type="text"
+                                    class="form-control input-outline">
+                                <option value="" selected>所有</option>
+                                <option value="gateway">gateway(网关)</option>
+                                <option value="bridge">bridge(桥接服务)</option>
+                                <option value="bridge-web">bridge-web(桥接服务web)</option>
+                                <option value="oauth">oauth(授权服务)</option>
+                                <option value="portal">portal(业务后台api)</option>
+                                <option value="manager">manager(运营后台api)</option>
+                            </select>
+                        </li>
+
+                        <li style="float: left;margin-left: 20px">日志类型: &nbsp;</li>
+                        <li style="float: left;">
+                            <select id="levelSelect" onchange="valChange(this,'level')" type="text"
+                                    class="form-control input-outline">
+                                <option value="" selected>所有</option>
+                                <option value="TRACE">trace</option>
+                                <option value="DEBUG">debug</option>
+                                <option value="WARN">warn</option>
+                                <option value="INFO">info</option>
+                                <option value="ERROR">error</option>
+                            </select>
+                        </li>
+
+                        <li style="float: left;margin-left: 30px">
+                            <input id="startDate" onchange="valChange(this,'startTime')" readonly type="text"
+                                   class="form-control input-outline" placeholder="开始时间">
+                        </li>
+                        <li style="float: left;margin-left: 10px">~</li>
+                        <li style="float: left;margin-left: 10px">
+                            <input id="endDate" onchange="valChange(this,'endTime')" readonly type="text"
+                                   class="form-control form-group-sm" placeholder="结束时间">
+                        </li>
+
+                        <!--自动刷新-->
+                       <!-- <li style="float: left;margin-left: 20px">
+                            <a href="javascript:void(0)"
+                               class="btn btn-bd-download"
+                               style="padding-bottom: 2px;padding-top: 2px" onclick="switchPlayOrPause(this)">
+                                <span class="glyphicon glyphicon-play" id="playSpan"></span>
+                            </a>
+                        </li>-->
+
+                        <li style="float: left;margin-left: 30px">更多筛选: &nbsp;</li>
+                        <li style="float: left;">
+                            <select id="searchTypeSelect" onchange="valChange(this,'searchType')" type="text"
+                                    class="form-control input-outline">
+                                <option value="msg" selected>内容</option>
+                                <option value="traceId">traceId</option>
+                            </select>
+                        </li>
+
+                       <!-- <li style="float: left;margin-left: 20px">
+                            <button class="btn btn-info" onclick="valChange(this,'reset')">重置</button>
+                        </li>-->
+
+                    </ul>
+                </div>
+
+                <table id="exampleTable" disabled hidden>
+                </table>
+
+                <section class="dscTable" style="margin-top: 1rem;background-color: #ffffff">
+                    <doc-table>
+                        <div>
+                            <table class="kbn-table table">
+                                <tbody id="logDatas">
+                                </tbody>
+                            </table>
+                        </div>
+                    </doc-table>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="/static/js/jquery.min.js"></script>
+
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/css/bootstrap-table.min.css" rel="stylesheet">
+<link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/static/css/dosearch.css" rel="stylesheet">
+<link href="/static/css/jquery.mloading.css" rel="stylesheet">
+<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/bundles/common.css">
+<link rel="stylesheet" href="/static/bundles/commons.style.css">
+
+
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstrap-table.min.js"></script>
+<script src="/static/js/bootstrap-table-zh-CN.min.js"></script>
+<script src="/static/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/static/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/static/js/bootstrap-table-toolbar.min.js"></script>
+<script src="/static/js/index.js"></script>
+<script src="/static/js/jquery.mloading.js"></script>
+
+<script>
+    $(function () {
+        //loadServices();
+        loadData();
+
+        $("#startDate").datetimepicker({
+            format: 'yyyy-mm-dd hh:00:00',
+            language: 'zh-CN',
+            todayBtn: true, 	//true时"今天"按钮仅仅将视图转到当天的日期。如果是'linked'，当天日期将会被选中。
+            todayHighlight: true,	//默认值: false,如果为true, 高亮当前日期。
+            initialDate: new Date(),
+            bootcssVer: 3,
+            minView: 1
+        });
+        $("#endDate").datetimepicker({
+            format: 'yyyy-mm-dd hh:00:00',
+            language: 'zh-CN',
+            todayBtn: true, 	//true时"今天"按钮仅仅将视图转到当天的日期。如果是'linked'，当天日期将会被选中。
+            todayHighlight: true,	//默认值: false,如果为true, 高亮当前日期。
+            initialDate: new Date(),
+            bootcssVer: 3,
+            minView: 1
+        });
+        $(".glyphicon-refresh").removeClass("glyphicon-refresh").addClass("glyphicon-search");
+        $(".pull-right").removeClass("pull-right");
+        $(".search").addClass("pull-left");
+        let $resetBtn = $('<button  class="btn btn-info" style="margin-left: 20px" onclick="valChange(this,'+ '\'reset\'' +')">重置</button>');
+        $(".fixed-table-toolbar").append($resetBtn);
+    });
+
+</script>
+
+<style>
+    .c11 {
+        font-size: 11px;
+    }
+    .c12 {
+        font-size: 12px;
+    }
+    .c13 {
+        font-size: 13px;
+    }
+    .c14 {
+        font-size: 14px;
+    }
+    .c15 {
+        font-size: 15px;
+    }
+</style>
+</body>
+</html>

@@ -1,0 +1,973 @@
+.eui-textNoWrap {
+    white-space: nowrap !important;
+}
+
+.eui-textBreakWord {
+    word-break: break-all !important;
+    word-break: break-word !important;
+}
+
+.eui-textBreakAll {
+    word-break: break-all !important;
+}
+
+[class*='eui-hideFor'] {
+    display: inline !important;
+}
+
+[class*='eui-showFor'] {
+    display: none !important;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font: inherit;
+    /* 1 */
+    font-family: inherit;
+    /* 1 */
+    vertical-align: baseline;
+}
+
+input, textarea, select, button {
+    font-family: inherit;
+    /* 1 */
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #2D2D2D;
+    height: 100%;
+    background-color: #F5F7FA;
+}
+
+body {
+    line-height: 1;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #006BB4;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover, button, [role='button'] {
+    cursor: pointer;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-size: 14px;
+    font-size: inherit;
+    color: inherit;
+    border-radius: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+hr {
+    margin: 0;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(105, 112, 125, 0.5) transparent;
+}
+
+.euiBasicTable-loading tbody {
+    overflow: hidden;
+}
+
+.euiBasicTable-loading tbody:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #006BB4;
+    -webkit-animation: euiBasicTableLoading 1000ms linear;
+    animation: euiBasicTableLoading 1000ms linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.euiDescriptionList.euiDescriptionList--column > * {
+    margin-top: 16px;
+}
+
+.euiDescriptionList.euiDescriptionList--column > *:first-child,
+.euiDescriptionList.euiDescriptionList--column > :nth-child(2) {
+    margin-top: 0;
+}
+
+.euiFilterGroup > * {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.euiFormRow.euiFormRow--compressed + * {
+    margin-top: 8px;
+}
+
+.euiHeaderLinks__mobileList .euiHeaderLink > span {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+
+.euiLoadingChart--medium > div {
+    width: 2px;
+    margin-left: 2px;
+    margin-bottom: 8px;
+}
+
+
+.euiLoadingChart--large > div {
+    width: 4px;
+    margin-left: 2px;
+    margin-bottom: 12px;
+}
+
+.euiLoadingChart--xLarge > div {
+    width: 8px;
+    margin-left: 4px;
+    margin-bottom: 16px;
+}
+
+.euiModalFooter > * + * {
+    margin-left: 16px;
+}
+
+
+.euiTableCellContent--showOnHover > *:not(:first-child) {
+    margin-left: 8px;
+}
+
+.euiToast__closeButton svg {
+    fill: #8d8d8d;
+}
+
+.euiToast__closeButton:hover svg {
+    fill: #1a1a1a;
+}
+
+.euiToast__closeButton:focus svg {
+    fill: #006BB4;
+}
+
+.euiToastHeader > * + * {
+    margin-left: 8px;
+    /* 2 */
+}
+
+.euiToken svg {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.euiToken--tokenTint01.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint01 svg {
+    fill: #005792;
+}
+
+
+.euiToken--tokenTint03.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint03 svg {
+    fill: #490092;
+}
+
+.euiToken--tokenTint04.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint04 svg {
+    fill: #95500a;
+}
+
+
+.euiToken--tokenTint05.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint05 svg {
+    fill: #2158a7;
+}
+
+.euiToken--tokenTint06.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint06 svg {
+    fill: #776412;
+}
+
+
+.euiToken--tokenTint07.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint07 svg {
+    fill: #006b63;
+}
+
+
+.euiToken--tokenTint08.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint08 svg {
+    fill: #920000;
+}
+
+
+.euiToken--tokenTint09.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint09 svg {
+    fill: #9a009a;
+}
+
+
+.euiToken--tokenTint10.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint10 svg {
+    fill: #196b00;
+}
+
+.euiToken--tokenTint11.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint11 svg {
+    fill: #4C1604;
+}
+
+.euiToken--tokenTint12.euiToken--fill svg {
+    fill: #FFF;
+}
+
+.euiToken--tokenTint12 svg {
+    fill: #575757;
+}
+
+.euiToolTipAnchor *[disabled] {
+    pointer-events: none;
+}
+
+.euiText a {
+    color: #006BB4;
+}
+
+.euiText a:hover {
+    color: #004d81;
+    text-decoration: underline;
+}
+
+.euiText a:focus {
+    text-decoration: underline;
+    outline: solid 3px rgba(0, 107, 180, 0.1);
+    background-color: rgba(0, 107, 180, 0.1);
+}
+
+.euiText img {
+    display: block;
+    width: 100%;
+}
+
+.euiText ul {
+    list-style: disc;
+}
+
+.euiText ol {
+    list-style: decimal;
+}
+
+.euiText blockquote {
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Georgia, Times, Times New Roman, serif;
+    font-style: italic;
+}
+
+.euiText blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.euiText blockquote:before, .euiText blockquote:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 50%;
+    right: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: #69707D;
+}
+
+.euiText blockquote:before {
+    top: 0;
+}
+
+.euiText blockquote:after {
+    bottom: 0;
+}
+
+.euiText h1 {
+    color: #1a1a1a;
+    font-size: 32.0px;
+    font-size: 2.28571rem;
+    line-height: 1.25;
+    font-weight: 600;
+    line-height: 3rem;
+}
+
+.euiText h2 {
+    color: #1a1a1a;
+    font-size: 24.0px;
+    font-size: 1.71429rem;
+    line-height: 1.25;
+    font-weight: 600;
+    line-height: 2.5rem;
+}
+
+.euiText h3 {
+    color: #1a1a1a;
+    font-size: 18.0px;
+    font-size: 1.28571rem;
+    line-height: 1.5;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+.euiText h4,
+.euiText dt {
+    color: #1a1a1a;
+    font-size: 14px;
+    font-size: 1rem;
+    line-height: 1.5;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+
+.euiText h5 {
+    color: #1a1a1a;
+    font-size: 14px;
+    font-size: 1rem;
+    line-height: 1.5;
+    line-height: 1.5rem;
+    font-weight: 700;
+}
+
+.euiText h6 {
+    color: #1a1a1a;
+    font-size: 12.0px;
+    font-size: 0.85714rem;
+    line-height: 1.5;
+    line-height: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.euiText pre {
+    white-space: pre-wrap;
+    background: #F5F7FA;
+    color: #2D2D2D;
+}
+
+.euiText pre,
+.euiText pre code {
+    display: block;
+}
+
+.euiText code {
+    display: inline-block;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-weight: 400;
+}
+
+.euiText p,
+.euiText ul,
+.euiText ol,
+.euiText dl,
+.euiText blockquote,
+.euiText img,
+.euiText pre {
+    margin-bottom: 1.5rem;
+}
+
+.euiText ul,
+.euiText ol {
+    margin-left: 1.5rem;
+}
+
+.euiText blockquote {
+    padding: 1.5rem;
+    font-size: 1.125rem;
+}
+
+.euiText h1,
+.euiText h2,
+.euiText h3,
+.euiText h4,
+.euiText h5,
+.euiText h6 {
+    margin-bottom: 0.5rem;
+}
+
+.euiText dd + dt {
+    margin-top: 1rem;
+}
+
+.euiText * + h2,
+.euiText * + h3,
+.euiText * + h4,
+.euiText * + h5,
+.euiText * + h6 {
+    margin-top: 2rem;
+}
+
+.euiText h1 {
+    font-size: 2.25rem;
+    line-height: 3rem;
+}
+
+.euiText h2 {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+}
+
+.euiText h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.euiText h4,
+.euiText dt,
+.euiText .eui-definitionListReverse dd {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.euiText .eui-definitionListReverse dt {
+    font-size: 0.75rem;
+    color: #2D2D2D;
+}
+
+.euiText h5 {
+    font-size: 0.875rem;
+    line-height: 1rem;
+}
+
+.euiText h6 {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.euiText small {
+    font-size: 0.875rem;
+}
+
+.euiText pre {
+    padding: 14px;
+}
+
+.euiText code {
+    font-size: 0.9rem;
+}
+
+.euiText.euiText--small p,
+.euiText.euiText--small ul,
+.euiText.euiText--small ol,
+.euiText.euiText--small dl,
+.euiText.euiText--small blockquote,
+.euiText.euiText--small img,
+.euiText.euiText--small pre {
+    margin-bottom: 1.5rem;
+}
+
+.euiText.euiText--small ul,
+.euiText.euiText--small ol {
+    margin-left: 1.5rem;
+}
+
+.euiText.euiText--small blockquote {
+    padding: 1.5rem;
+    font-size: 1.125rem;
+}
+
+.euiText.euiText--small h1,
+.euiText.euiText--small h2,
+.euiText.euiText--small h3,
+.euiText.euiText--small h4,
+.euiText.euiText--small h5,
+.euiText.euiText--small h6 {
+    margin-bottom: 0.5rem;
+}
+
+.euiText.euiText--small dd + dt {
+    margin-top: 1rem;
+}
+
+.euiText.euiText--small * + h2,
+.euiText.euiText--small * + h3,
+.euiText.euiText--small * + h4,
+.euiText.euiText--small * + h5,
+.euiText.euiText--small * + h6 {
+    margin-top: 2rem;
+}
+
+.euiText.euiText--small h1 {
+    font-size: 2.25rem;
+    line-height: 3rem;
+}
+
+.euiText.euiText--small h2 {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+}
+
+.euiText.euiText--small h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.euiText.euiText--small h4,
+.euiText.euiText--small dt,
+.euiText.euiText--small .eui-definitionListReverse dd {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.euiText.euiText--small .eui-definitionListReverse dt {
+    font-size: 0.75rem;
+    color: #2D2D2D;
+}
+
+.euiText.euiText--small h5 {
+    font-size: 0.875rem;
+    line-height: 1rem;
+}
+
+.euiText.euiText--small h6 {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.euiText.euiText--small small {
+    font-size: 0.875rem;
+}
+
+.euiText.euiText--small pre {
+    padding: 14px;
+}
+
+.euiText.euiText--small code {
+    font-size: 0.9rem;
+}
+
+.euiText.euiText--extraSmall p,
+.euiText.euiText--extraSmall ul,
+.euiText.euiText--extraSmall ol,
+.euiText.euiText--extraSmall dl,
+.euiText.euiText--extraSmall blockquote,
+.euiText.euiText--extraSmall img,
+.euiText.euiText--extraSmall pre {
+    margin-bottom: 1.28571rem;
+}
+
+.euiText.euiText--extraSmall ul,
+.euiText.euiText--extraSmall ol {
+    margin-left: 1.28571rem;
+}
+
+.euiText.euiText--extraSmall blockquote {
+    padding: 1.28571rem;
+    font-size: 0.96429rem;
+}
+
+.euiText.euiText--extraSmall h1,
+.euiText.euiText--extraSmall h2,
+.euiText.euiText--extraSmall h3,
+.euiText.euiText--extraSmall h4,
+.euiText.euiText--extraSmall h5,
+.euiText.euiText--extraSmall h6 {
+    margin-bottom: 0.42857rem;
+}
+
+.euiText.euiText--extraSmall dd + dt {
+    margin-top: 0.85714rem;
+}
+
+.euiText.euiText--extraSmall * + h2,
+.euiText.euiText--extraSmall * + h3,
+.euiText.euiText--extraSmall * + h4,
+.euiText.euiText--extraSmall * + h5,
+.euiText.euiText--extraSmall * + h6 {
+    margin-top: 1.71429rem;
+}
+
+.euiText.euiText--extraSmall h1 {
+    font-size: 1.92857rem;
+    line-height: 2.57143rem;
+}
+
+.euiText.euiText--extraSmall h2 {
+    font-size: 1.5rem;
+    line-height: 2.14286rem;
+}
+
+.euiText.euiText--extraSmall h3 {
+    font-size: 1.07143rem;
+    line-height: 1.71429rem;
+}
+
+.euiText.euiText--extraSmall h4,
+.euiText.euiText--extraSmall dt,
+.euiText.euiText--extraSmall .eui-definitionListReverse dd {
+    font-size: 0.85714rem;
+    line-height: 1.28571rem;
+}
+
+.euiText.euiText--extraSmall .eui-definitionListReverse dt {
+    font-size: 0.64286rem;
+    color: #2D2D2D;
+}
+
+.euiText.euiText--extraSmall h5 {
+    font-size: 0.75rem;
+    line-height: 0.85714rem;
+}
+
+.euiText.euiText--extraSmall h6 {
+    font-size: 0.64286rem;
+    line-height: 0.85714rem;
+}
+
+.euiText.euiText--extraSmall small {
+    font-size: 0.75rem;
+}
+
+.euiText.euiText--extraSmall pre {
+    padding: 12.0px;
+}
+
+.euiText.euiText--extraSmall code {
+    font-size: 0.77143rem;
+}
+
+.euiText > :last-child,
+.euiText .euiTextColor > :last-child {
+    margin-bottom: 0 !important;
+}
+
+
+.euiSeriesChartContainer .rv-xy-plot canvas {
+    pointer-events: none;
+}
+
+.euiSeriesChartContainer .rv-xy-plot__axis__title text {
+    fill: #6b6b76;
+    font-size: 11px;
+}
+
+
+.euiSeriesChartContainer .rv-xy-plot__series path {
+    pointer-events: all;
+}
+
+.euiBarSeries rect {
+    stroke-width: 1;
+    stroke: white !important;
+    rx: 2;
+    ry: 2;
+}
+
+.euiBarSeries--highDataVolume rect {
+    stroke-width: 0;
+    rx: 0;
+    ry: 0;
+}
+
+.euiBarSeries--hoverEnabled rect:hover {
+    cursor: pointer;
+}
+
+.euiHistogramSeries rect {
+    stroke-width: 1;
+    stroke: white !important;
+    rx: 2;
+    ry: 2;
+}
+
+.euiHistogramSeries--highDataVolume rect {
+    stroke-width: 0;
+    rx: 0;
+    ry: 0;
+}
+
+.euiHistogramSeries--hoverEnabled rect:hover {
+    cursor: pointer;
+}
+
+.truncate-by-height {
+    max-height: 115px !important;
+    display: inline-block;
+}
+
+.truncate-by-height:before {
+    top: 100px;
+}
+
+.erd_scroll_detection_container > div::-webkit-scrollbar {
+    display: none;
+}
+
+.coreSystemRootDomElement {
+    overflow-x: hidden;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+.dscTable {
+    overflow: auto;
+}
+
+kbn-table,
+.kbn-table {
+    font-size: 12px;
+}
+kbn-table th,
+.kbn-table th {
+    white-space: nowrap;
+    padding-right: 10px;
+}
+kbn-table th .fa,
+.kbn-table th .fa {
+    font-size: 1.1em;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.dscTable .kbnDocTable__row {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.dscTable__footer {
+    background-color: #D3DAE6;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.kbnDocTableOpen__button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    width: 14px;
+    /* 1 */
+    height: 14px;
+}
+
+.kuiIcon {
+    display: inline-block;
+    /* 1 */
+    font: normal normal normal 14px/1 FontAwesome;
+    /* 1 */
+    font-size: inherit;
+    /* 1 */
+    text-rendering: auto;
+    /* 1 */
+    -webkit-font-smoothing: antialiased;
+    /* 1 */
+    -moz-osx-font-smoothing: grayscale;
+    /* 1 */ }
+
+
+.fa-caret-right:before {
+    content: "\F0DA";
+}
+
+.kbnDocTableCell__filter {
+    position: absolute;
+    white-space: nowrap;
+    right: 0;
+}
+
+.kbnDocTableRowFilterButton:focus {
+    opacity: 1;
+    /* 3 */
+}
+
+.kbnDocTable__row td:hover .kbnDocTableRowFilterButton {
+    opacity: 1;
+}
+
+.kbnDocTableRowFilterButton {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #FFF;
+    border: none;
+    padding: 0 4px;
+    font-size: 14px;
+    line-height: 1;
+    /* 1 */
+    display: inline-block;
+    opacity: 0;
+    /* 2 */
+}
+
+.truncate-by-height {
+    overflow: hidden;
+}
+
+kbn-table dl.source,
+.kbn-table dl.source,
+tbody[kbn-rows] dl.source {
+    margin-bottom: 0;
+    line-height: 2em;
+    word-break: break-all;
+}
+kbn-table dl.source dt,
+.kbn-table dl.source dt,
+tbody[kbn-rows] dl.source dt,
+kbn-table dl.source dd,
+.kbn-table dl.source dd,
+tbody[kbn-rows] dl.source dd {
+    display: inline;
+}
+kbn-table dl.source dt,
+.kbn-table dl.source dt,
+tbody[kbn-rows] dl.source dt {
+    background-color: rgba(0, 46, 78, 0.1);
+    color: #000;
+    padding: 1px 5px;
+    margin-right: 5px;
+    font-family: monospace;
+    word-break: normal;
+    border-radius: 2px;
+}
+
+doc-table {
+    overflow: auto;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /* 1 */
+}
+
+doc-table th {
+    text-align: left;
+    font-weight: bold;
+}
+
+doc-table .spinner {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 0.5;
+}

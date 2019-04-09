@@ -1,0 +1,23 @@
+spring:
+  webflux:
+    static-path-pattern: /static/**
+  thymeleaf:
+    cache: false
+mongodb:
+  db1:
+    host: localhost
+    port: 11072
+    database: LOG
+    username: USER
+    password: USER
+  db2:
+    host: localhost
+    port: 11072
+    database: LOG
+    username: USER
+    password: USER
+logging:
+  level:
+    org.springframework.data.mongodb.core: DEBUG
+server:
+  port: 8081
